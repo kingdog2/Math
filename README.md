@@ -47,10 +47,8 @@ namespace MathLibrary {
         } 
         private void Error_print(){
             //Console.WriteLine("1233123123131231");
-            try
-            {
-                if (!File.Exists("log.txt"))
-                {
+            try{
+                if (!File.Exists("log.txt")){
                     File.WriteAllText("log.txt", "==== 日誌開始 ====\n");
                 }
                 File.AppendAllText("log.txt", $"{DateTime.Now}: {"除法錯誤 b=0"}{Environment.NewLine}");
@@ -86,27 +84,34 @@ namespace MathLibraryTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("目前專案目錄: " + Directory.GetCurrentDirectory());
-            Console.Write("請輸入第一個數字(a): ");
-            string input1 = Console.ReadLine();
-            Console.Write("請輸入第二個數字(b): ");
-            string input2 = Console.ReadLine();
-            if (int.TryParse(input1, out int num1) && int.TryParse(input2, out int num2))
-            {
-                MathOperations math = new MathOperations();
-
-                Console.WriteLine($"{num1} + {num2} = {math.Add(num1, num2)}");
-                Console.WriteLine($"{num1} - {num2} = {math.Subtract(num1, num2)}");
-
-                double result = math.Divide(num1, num2);
-                Console.WriteLine($"{num1} / {num2} = {result}");
-
-                result = math.Divide(num1, 0);
-                Console.WriteLine($"{num1} / 0 = {result} (查看 log.txt in {Directory.GetCurrentDirectory()})");
+            MathOperations math;
+            try { 
+                Console.WriteLine("目前專案目錄: " + Directory.GetCurrentDirectory());
+                Console.Write("請輸入第一個數字(a): ");
+                string input1 = Console.ReadLine();
+                Console.Write("請輸入第二個數字(b): ");
+                string input2 = Console.ReadLine();
                 
-            } else {
-                Console.WriteLine("輸入無效，請輸入有效的數字(Int)。"); 
+                if (int.TryParse(input1, out int num1) && int.TryParse(input2, out int num2))
+                {
+                     math = new MathOperations();
+
+                    Console.WriteLine($"{num1} + {num2} = {math.Add(num1, num2)}");
+                    Console.WriteLine($"{num1} - {num2} = {math.Subtract(num1, num2)}");
+
+                    double result = math.Divide(num1, num2);
+                    Console.WriteLine($"{num1} / {num2} = {result}");
+
+                    result = math.Divide(num1, 0);
+                    Console.WriteLine($"{num1} / 0 = {result} (查看 log.txt in {Directory.GetCurrentDirectory()})");
+                
+                } else {
+                    Console.WriteLine("輸入無效，請輸入有效的數字(Int)。"); 
+                }
+            }catch (Exception ex) {
+                Console.WriteLine($"有錯誤: { ex.Message}");
             }
+            math = null; 
             Console.WriteLine("結束!!!!!!!");
             Console.ReadLine();
         }
