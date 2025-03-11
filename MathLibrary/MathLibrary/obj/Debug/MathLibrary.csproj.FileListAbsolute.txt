@@ -1,0 +1,6 @@
+C:\Users\f2201\OneDrive\桌面\MathLibrary\MathLibrary\obj\Debug\MathLibrary.csproj.AssemblyReference.cache
+C:\Users\f2201\OneDrive\桌面\MathLibrary\MathLibrary\obj\Debug\MathLibrary.csproj.CoreCompileInputs.cache
+C:\Users\f2201\OneDrive\桌面\MathLibrary\MathLibrary\bin\Debug\MathLibrary.dll
+C:\Users\f2201\OneDrive\桌面\MathLibrary\MathLibrary\bin\Debug\MathLibrary.pdb
+C:\Users\f2201\OneDrive\桌面\MathLibrary\MathLibrary\obj\Debug\MathLibrary.dll
+C:\Users\f2201\OneDrive\桌面\MathLibrary\MathLibrary\obj\Debug\MathLibrary.pdb
