@@ -120,7 +120,7 @@ namespace MathLibraryTest
 在 Visual Studio 中：
 
 1. **Build Solution**。
-2. 執行 `MathLibraryTest.exe`。
+2. 執行 `MathLibraryTest.exe`(MathLibraryTest\bin\Release目錄下)。
 
 **範例輸出：**
 
@@ -130,6 +130,7 @@ namespace MathLibraryTest
 5 + 3 = 8
 5 - 3 = 2
 5 / 3 = 1.66666666666667
+5 / 0 = 無效 (請查看 log.txt) ------>>>這行不管b是多少皆以0為測試
 ```
 
 ```
@@ -137,7 +138,7 @@ namespace MathLibraryTest
 請輸入第二個數字: 0
 10 + 0 = 10
 10 - 0 = 10
-10 / 0 = 無效 (請查看 log.txt)
+10 / 0 = 無效 (請查看 log.txt) ------>>>這行不管b是多少皆以0為測試
 ```
 
 ## 錯誤處理與日誌
@@ -146,7 +147,5 @@ namespace MathLibraryTest
 - `log.txt` 會儲存在執行目錄下。
 - 若寫入 `log.txt` 失敗，將顯示錯誤訊息。
 
-## 授權
 
-MIT License
 
